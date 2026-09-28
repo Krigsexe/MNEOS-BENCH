@@ -36,7 +36,7 @@ Le moteur, le harnais, l'ingestion et la consolidation sont fermés. Par conséq
 
 ## Lacunes de cet audit
 
-- `huggingface.co`, `arxiv.org` et les sites Mnemosyne sont bloqués par la politique réseau du conteneur. Pour les débloquer : « Network access » dans les réglages de l'environnement.
+- `huggingface.co`, `arxiv.org` et les sites Mnemosyne sont bloqués par la politique réseau du conteneur.
 - LongMemEval-M n'a pas été récupéré, et les empreintes des données HF n'ont pas pu être calculées.
 - Le texte des questions provient d'une copie tierce recoupée (48/48 références identiques).
 - Les verdicts BEAM hors abstention n'ont pas été relus.

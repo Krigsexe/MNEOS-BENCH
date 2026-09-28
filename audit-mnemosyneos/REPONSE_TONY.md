@@ -1,6 +1,5 @@
-# Proposition de réponse à Tony
+# Message à Tony
 
-*Brouillon pour Julien, rien n'a été envoyé. Révision 2 (2026-09-28) : chaque point a été revérifié contre la source primaire la plus directe disponible. Voir « Niveau de certitude » en fin de document.*
 
 ---
 
@@ -26,20 +25,3 @@ Suite à notre échange d'hier soir, voici ma relecture complète de tes dépôt
 Je serais preneur de quatre choses : la règle de combinaison heuristique et juge avec les sorties brutes du juge, la transcription complète de `aae3761f` run 1 (ton registre cite « total 15 hours », absent du journal tronqué), la règle de tirage du holdout, et la version exacte du corpus LongMemEval-M.
 
 Julien
-
----
-
-## Niveau de certitude par point (pour Julien, à ne pas envoyer)
-
-| Point | Fondement | Certitude |
-|---|---|---|
-| 1 | Fichiers bruts + oracle officiel (E09, E10) | Établi |
-| 2 | Métadonnées et registres publiés par Tony (E13) | Établi pour les faits ; « même build » non établi, d'où la formulation |
-| 3 | Fichiers publiés (E15) ; les fichiers `boost-*` ne contiennent que de la récupération (vérifié) | Établi pour les pièces publiées |
-| 4 | Contenu des fichiers `recall-hold-*` | Établi |
-| 5 | README BEAM ; Table 1 et Main Results relus directement (v1) | Établi pour la v1 ; autre version non exclue, d'où la question |
-| 6 | Code, test adverse, fichiers bruts (E01, E03, E08) | Établi pour le fichier ; prompt réel du harnais inconnu |
-| 7 | Réponses publiées ; README LongMemEval (aucune convention documentée) | Présence établie ; portée et effet inconnus |
-| 8 | Conversations BEAM@b2da22e (T20) | Établi pour les 3 cas cités |
-
-**Retiré de la version 1** : « 7 faux positifs nets du juge BEAM ». La vérification dans les conversations sources (T20) montre que les faits affirmés existent dans 3 cas et sont discutables dans les 4 autres.

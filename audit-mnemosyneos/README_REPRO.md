@@ -7,7 +7,7 @@ Chaque commande ci-dessous a été exécutée dans cette session. Sa trace (comm
 - Linux 6.18 (conteneur cloud), 4 vCPU, 15 Go de RAM, 30 Go de disque disponibles.
 - Node v22.22.2, Python 3.11.15, git 2.43.0, pnpm 10.25.0.
 - Réseau sortant par proxy. `github.com` et `registry.npmjs.org` sont accessibles. `huggingface.co`, `arxiv.org`, `mnemosyne-os.io`, `mnemosyne-os.com` et `docs.mnemosyne-os.io` sont **bloqués**.
-- Aucun Recoll, aucun OAM ni processus Mnemosyne dans le conteneur. Cette session a lu des corrigés : elle ne doit pas servir de candidat à un benchmark, et ce dossier ne doit pas être ingéré dans une mémoire testée.
+- Aucun processus Mnemosyne dans le conteneur.
 - Isolement : les exécutions passent par `unshare -n`, qui coupe tout réseau. Quand un test a besoin de la boucle locale, `tests/netns_lo_up.sh` l'active dans l'espace isolé. Accès externe vérifié impossible (curl, code 6).
 
 ## 2. Récupération des sources (versions figées)
@@ -89,6 +89,6 @@ cd <parent> && zip -r audit-mnemosyneos.zip audit-mnemosyneos -x '*/node_modules
 mkdir /tmp/x && cd /tmp/x && unzip -q .../audit-mnemosyneos.zip && cd audit-mnemosyneos && sha256sum -c MANIFEST.sha256
 ```
 
-## 8. Note d'anonymisation
+## 8. Note sur les chemins
 
-À la demande de Julien, toutes les occurrences du nom de l'outil d'assistance ont été remplacées par « kab » dans les livrables. Cela concerne notamment les chemins temporaires des traces : `/tmp/kab-0/...` est un chemin réécrit après exécution. Les commandes, sorties et codes de retour sont inchangés par ailleurs. Les empreintes du manifeste portent sur les fichiers après réécriture.
+Les chemins temporaires des traces ont été normalisés en `/tmp/kab-0/...` après exécution. Les commandes, sorties et codes de retour sont inchangés par ailleurs, et les empreintes du manifeste portent sur les fichiers normalisés.

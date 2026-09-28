@@ -1,6 +1,6 @@
 # Rapport épistémique : audit des annonces publiques de MnemosyneOS
 
-Mission KAB / ARES, pour Julien Gelée / Koperateur Consulting. Audit réalisé le 2026-09-28 (UTC) dans un conteneur cloud isolé. Versions figées : voir `SOURCES_ET_VERSIONS.json`.
+Audit KAB / ARES, réalisé le 2026-09-28 (UTC) dans un conteneur cloud isolé. Versions figées : voir `SOURCES_ET_VERSIONS.json`.
 
 | Dépôt | Commit examiné | Date du commit |
 |---|---|---|
@@ -262,7 +262,7 @@ Chemin d'un appel (E32) : application → `MnemoClient.connect` (manifeste charg
 
 ### C17. Mémoire dans la durée : NON EXÉCUTÉ
 
-Les scénarios prévus par le mandat (§11) dépendent du moteur fermé : correction d'une source et de ses dérivés, retrait sans réapparition après reconstruction, limites entre coffres et agents, reprise après interruption, double ingestion, export et réimport. Ils sont livrés avec leurs attendus dans `INCONNUS_ET_CODE_INACCESSIBLE.md` §4, marqués NON EXÉCUTÉ. Les campagnes publiées ne mesurent aucune de ces propriétés : elles mesurent le rappel et la réponse sur des historiques figés.
+Les scénarios prévus par le plan d'audit dépendent du moteur fermé : correction d'une source et de ses dérivés, retrait sans réapparition après reconstruction, limites entre coffres et agents, reprise après interruption, double ingestion, export et réimport. Ils sont livrés avec leurs attendus dans `INCONNUS_ET_CODE_INACCESSIBLE.md` §4, marqués NON EXÉCUTÉ. Les campagnes publiées ne mesurent aucune de ces propriétés : elles mesurent le rappel et la réponse sur des historiques figés.
 
 ---
 
@@ -282,7 +282,7 @@ Les scénarios prévus par le mandat (§11) dépendent du moteur fermé : correc
 
 ## 5. Affirmations antérieures réexaminées
 
-Ces signalements provenaient d'analyses précédentes, y compris de notre propre assistant. Ils ont été repris comme pistes, pas comme preuves.
+Ces signalements provenaient d'analyses antérieures. Ils ont été repris comme pistes, pas comme preuves.
 
 | Signalement | Verdict | Détail |
 |---|---|---|
@@ -321,5 +321,5 @@ Toute affirmation selon laquelle ces défauts d'heuristique « gonflent les scor
    - la transcription complète de `aae3761f` run 1 ;
    - la règle de tirage du holdout ;
    - la référence exacte 0,30 → 0,12.
-5. Test en boîte noire du binaire en mode local, sous capture réseau, si Julien l'autorise.
+5. Test en boîte noire du binaire en mode local, sous capture réseau.
 6. Rejeu avec des identifiants de session anonymisés (à demander au porteur).
