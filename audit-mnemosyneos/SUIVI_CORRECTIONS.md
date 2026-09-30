@@ -53,3 +53,20 @@ Limites :
 - **Moteur** : fermé. Le rerun mesure la porte SDK/MCP, pas le chat de l'application (déclaré).
 
 Encore ouverts (selon Tony lui-même) : la phrase BEAM « 60 % », le README produit, la ligne de portée à côté du nom, et la transcription `aae3761f`.
+
+## 2026-09-30 (soir) : benchmarks@3800a04, produit@1fea50d
+
+| Point | État | Preuve |
+|---|---|---|
+| BEAM « 0.30 → 0.12 / 60 % » | Corrigé : RAG −22 à −29 %, modèles lisant toute la conversation −50 à −57 % | benchmarks `README.md` L102-L103, `beam-2026-09/verify.js` L190-L191, `ERRATUM.md` item 7 (`a5d9205`) |
+| README produit : « lower bound » | Retiré du README | produit `README.md` (`432b879`) |
+| README produit : localité et score | Le score est décrit en « hybrid mode », avec réponses par un modèle cloud nommé (gemini-3.8-flash) | produit `README.md` L110-L113 (`1fea50d`) |
+| Emplacement des pièces demandées | Indiqué dans `ERRATUM.md` | `3800a04` |
+| Ligne de portée | Ajoutée à la **fin** d'`ERRATUM.md` (L107-L108), pas à la première mention du nom (L3). Absente du bandeau du README de benchmarks (L15), de `PROTOCOL.md`, de la synthèse du rerun, de `RESULTS.md` et d'`index.html`, où le nom figure aussi | grep |
+
+Nuances restantes :
+- **« never seen » / « unseen questions »** (badge du README produit L24, L110, L244) : le holdout n'avait jamais reçu de réponse, mais il a servi trois fois à mesurer la récupération, et une mesure sur les 96 questions a guidé un choix de configuration (PROTOCOL §3 et §11). « Never answered » serait exact ; « never seen » ne l'est pas.
+- **`aae3761f`** : l'erratum reconnaît que la transcription complète n'existe pas. Pourtant, le registre `engine-multisession-8q.jsonl` contient toujours le texte « … total 15 hours. », absent du journal, et un `discard_reason` qui affirme « The first run answered 15 hours ».
+- **Livre blanc** : `doc/RESONANCE_ENGINE_WHITEPAPER.md` L229 du dépôt produit dit encore « 72.9 % is a stated lower bound ». Tony annonce une correction de la version Zenodo.
+- **Image d'en-tête** du README produit (L56, `strip-specs.png`) : son texte alternatif dit encore « 100% local, your memory never leaves your machine », mais elle n'est plus accolée au score.
+- **Sites et article comparatif** : leur correction est annoncée, mais je n'ai pas pu la vérifier (domaines bloqués ici).
