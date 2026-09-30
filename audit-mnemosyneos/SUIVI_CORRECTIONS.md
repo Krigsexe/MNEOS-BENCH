@@ -25,3 +25,31 @@ Vérifié hors réseau (traces T21 à T25).
 Nuance : l'audit humain a relu les HIT du bras fusion seulement. Les HIT du bras de référence et les MISS des deux bras n'ont pas été relus. C'est conservateur pour le gain annoncé, mais le delta apparié pourrait encore bouger dans un sens ou dans l'autre.
 
 Défauts résiduels de l'heuristique (négation, unités, ordre) : sans effet sur les verdicts, puisque le juge décide seul. `parseJudgeVerdict` (règle « dernier YES/NO ») reste inchangé ; effet non observable sans les sorties brutes du juge.
+
+## 2026-09-30 : rerun pré-enregistré, MnemosyneOS---benchmarks@69c5bbc (protocole) et @b4a24f0 (résultats)
+
+Vérifié hors réseau : `verify.js` du dépôt (T26, rc=0) et une vérification indépendante en Python (T27, rc=0), qui importe le code original d'`evaluate_qa.py` de LongMemEval@9e0b455.
+
+| Contrôle | Résultat | Preuve |
+|---|---|---|
+| Sel : SHA-256 = valeur gelée dans le protocole | Conforme | T27 §1 |
+| Table d'anonymisation (29 779 ids) recalculée depuis le sel | 0 écart | T27 §2 |
+| Identifiants du jeu (`answer_`, `sharegpt_`, `ultrachat_`) dans les 384 réponses | 0 | T27 §3 |
+| Prompts du juge officiel (768) identiques à `get_anscheck_prompt()` ; modèle gpt-4o-2024-08-06 ; verdict = règle « yes » officielle | 0 écart | T27 §4-5 |
+| 8 scores publiés (deux passes requises, après audit humain) | Reproduits : holdout officiel fusion 37/48, vector 38/48 | T27 §6 |
+| Audit humain : 5 renversements, tous de YES à NO | Sans effet sur le holdout ; dev −1 sur trois scores | `human-audit.json`, T27 §6 |
+| Fusion contre vector, holdout, juge officiel | +2/−3 (dans le bruit, comme publié) | T27 §6 |
+| Échantillon dev = les 48 questions auditées en août | Conforme | T27 §7 |
+| Holdout = règle publiée (tri lexicographique, 8 premiers par type parmi 452), recalculée sur la liste tierce des 500 ids | 48/48 ; 5 `_abs` ; identique au holdout d'août | T27 §7 |
+| Empreinte du `dist` du moteur identique au protocole dans les 8 runs | Conforme (valeur auto-déclarée, moteur fermé) | T27 §8 |
+| Protocole modifié après le run | Seule la section 10 « Deviations » a été remplie (changement de commit du monorepo pendant le run, registres remplacés par les fichiers bruts, une nouvelle tentative réseau) | `git diff 69c5bbc b4a24f0 -- PROTOCOL.md` |
+
+Limites :
+- **Pré-enregistrement** : l'ordre des commits est établi, mais leurs dates sont fixées par l'auteur. L'antériorité réelle de la publication de `69c5bbc` par rapport au run se lit dans l'historique des pushes GitHub. Je n'ai pas pu y accéder depuis cet environnement (API refusée).
+- **Holdout non vierge** : il a servi trois fois à mesurer la récupération (déclaré), et une mesure sur les 96 questions a guidé le choix « question nue » (PROTOCOL §11).
+- **Audit humain** : il ne relit pas les réponses fausses acceptées par les deux juges (déclaré).
+- **Comparabilité** : le lecteur (`gemini-3.8-flash`), le juge strict et le moteur ont changé en même temps (déclaré). Ces scores ne prolongent pas les précédents.
+- **Corpus** : l'empreinte `longmemeval_m_cleaned.json` n'a pas été recalculée (téléchargement bloqué ici). La taille (2 737 100 077 octets) correspond à celle du Hub.
+- **Moteur** : fermé. Le rerun mesure la porte SDK/MCP, pas le chat de l'application (déclaré).
+
+Encore ouverts (selon Tony lui-même) : la phrase BEAM « 60 % », le README produit, la ligne de portée à côté du nom, et la transcription `aae3761f`.
