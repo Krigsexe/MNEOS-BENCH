@@ -77,3 +77,12 @@ Nuances restantes :
 |---|---|---|
 | Livre blanc : « 72.9 % is a stated lower bound » | Corrigé : « The previous edition called it a lower bound. That was wrong » ; le 77,1 % du rerun est décrit en « hybrid mode », avec « 48 holdout questions with no answer generated before ». Ton nom n'apparaît pas | `doc/RESONANCE_ENGINE_WHITEPAPER.md` L222-L282 (`78bee30`) ; DOI v2.2 10.5281/zenodo.23070331 (`df58500`, non consulté : Zenodo non vérifié ici) |
 | « never seen » (README produit), « total 15 hours » (registre `aae3761f`), ligne de portée dans le bandeau du README de benchmarks | Inchangés : aucun commit sur benchmarks après `3800a04`, ni sur le README produit après `1fea50d` | `git log` |
+
+## 2026-10-01 : publication LinkedIn de Tony, commentaire public de Julien
+
+Le post de Tony (texte transmis par Julien) reprend :
+- « 48 questions que le moteur n'avait jamais vues », contredit par PROTOCOL §3 : questions jamais répondues, mais déjà utilisées pour mesurer la récupération ;
+- une progression implicite de 72,9 % à 77,1 % attribuée aux changements du moteur, alors que le lecteur, le juge et l'ensemble de questions ont aussi changé, comme le reconnaît la synthèse du rerun (« the gain cannot be split ») ;
+- la ligne de portée (« Son audit portait sur nos fichiers publiés, pas sur le produit ni sur le moteur »).
+
+Julien a répondu publiquement sous le post avec ces deux précisions et le rappel de portée. La page LinkedIn n'est pas consultable depuis cet environnement : le suivi de ce fil reste manuel.
