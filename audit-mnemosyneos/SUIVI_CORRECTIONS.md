@@ -70,3 +70,10 @@ Nuances restantes :
 - **Livre blanc** : `doc/RESONANCE_ENGINE_WHITEPAPER.md` L229 du dépôt produit dit encore « 72.9 % is a stated lower bound ». Tony annonce une correction de la version Zenodo.
 - **Image d'en-tête** du README produit (L56, `strip-specs.png`) : son texte alternatif dit encore « 100% local, your memory never leaves your machine », mais elle n'est plus accolée au score.
 - **Sites et article comparatif** : leur correction est annoncée, mais je n'ai pas pu la vérifier (domaines bloqués ici).
+
+## 2026-10-01 : produit@59c5352 (livre blanc v2.2)
+
+| Point | État | Preuve |
+|---|---|---|
+| Livre blanc : « 72.9 % is a stated lower bound » | Corrigé : « The previous edition called it a lower bound. That was wrong » ; le 77,1 % du rerun est décrit en « hybrid mode », avec « 48 holdout questions with no answer generated before ». Ton nom n'apparaît pas | `doc/RESONANCE_ENGINE_WHITEPAPER.md` L222-L282 (`78bee30`) ; DOI v2.2 10.5281/zenodo.23070331 (`df58500`, non consulté : Zenodo non vérifié ici) |
+| « never seen » (README produit), « total 15 hours » (registre `aae3761f`), ligne de portée dans le bandeau du README de benchmarks | Inchangés : aucun commit sur benchmarks après `3800a04`, ni sur le README produit après `1fea50d` | `git log` |
