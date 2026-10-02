@@ -86,3 +86,13 @@ Le post de Tony (texte transmis par Julien) reprend :
 - la ligne de portée (« Son audit portait sur nos fichiers publiés, pas sur le produit ni sur le moteur »).
 
 Julien a répondu publiquement sous le post avec ces deux précisions et le rappel de portée. La page LinkedIn n'est pas consultable depuis cet environnement : le suivi de ce fil reste manuel.
+
+## 2026-10-02 : produit@f74605e (« never seen » reformulé)
+
+| Point | État | Preuve |
+|---|---|---|
+| « never seen » / « unseen questions » | Remplacé partout par « holdout questions, never used to tune the engine » : badge (L24), paragraphe (L110-L111), tableau (L244), `ROADMAP.md`, `doc/README.md`, `llms.txt`. Le README dit aussi (L255) « The holdout questions had never been answered before », formulation exacte | `f74605e` (2026-10-01), `git grep` sur `origin/main` |
+| Nouvelle formulation « never used to tune the engine » | **Encore trop forte au regard de PROTOCOL §11** : le choix « bare question for retrieval » a été retenu « for the better retrieval », mesurée « on the 96 questions », donc holdout compris (87 contre 83, +8/−2, p = 0,11). C'est un réglage de la requête de récupération plutôt que du moteur lui-même, mais il est mesuré sur le holdout. « Never answered » reste la seule formulation que les pièces établissent | `longmemeval-rerun-2026-10/PROTOCOL.md` §3 (L45-L48) et §11 (L216-L223), benchmarks@3800a04 |
+| Registre `aae3761f` « total 15 hours » ; ligne de portée dans le bandeau du README de benchmarks | Inchangés : aucun commit sur benchmarks après `3800a04` | `git log` |
+| PR n° 47 | Ouverte, aucun nouveau commentaire depuis le message de Julien du 30 septembre | page de la PR |
+| Usage du nom de Julien | Dans le dépôt produit, seul le message du commit `f74605e` le cite (« Wording raised by Julien Gelee »), sans présentation de validation. Sites mnemosyne-os.io/.com toujours bloqués ici, non vérifiés | `git grep`, `git log` |
