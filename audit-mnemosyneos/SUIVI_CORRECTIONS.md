@@ -96,3 +96,11 @@ Julien a répondu publiquement sous le post avec ces deux précisions et le rapp
 | Registre `aae3761f` « total 15 hours » ; ligne de portée dans le bandeau du README de benchmarks | Inchangés : aucun commit sur benchmarks après `3800a04` | `git log` |
 | PR n° 47 | Ouverte, aucun nouveau commentaire depuis le message de Julien du 30 septembre | page de la PR |
 | Usage du nom de Julien | Dans le dépôt produit, seul le message du commit `f74605e` le cite (« Wording raised by Julien Gelee »), sans présentation de validation. Sites mnemosyne-os.io/.com toujours bloqués ici, non vérifiés | `git grep`, `git log` |
+
+## 2026-10-03 : état inchangé, identité des commits corrigée
+
+| Point | État | Preuve |
+|---|---|---|
+| Benchmarks | Aucun commit après `3800a04` : registre `aae3761f` (« total 15 hours ») et bandeau du README sans ligne de portée inchangés | `git log` |
+| Produit | Trois commits après `f74605e` (`9ff64ec`, `11def71`, `53701ab`) : version 1.7.0 et paquets npm, sans rapport avec le benchmark, le 77,1 % ou l'audit. « Never used to tune the engine » reste en place, avec la réserve du 2 octobre | `git diff f74605e 53701ab` |
+| Identité des commits de cette branche | Les commits précédents portaient l'adresse `kab@users.noreply.github.com`, que GitHub rattache à un compte tiers sans lien avec cet audit. Ils sont réattribués à `KAB`, compte Krigsexe. Arbres, dates et messages inchangés | `git log --format='%T %at %ct %s'` identique avant et après |
