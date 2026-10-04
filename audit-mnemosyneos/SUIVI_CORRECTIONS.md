@@ -104,3 +104,14 @@ Julien a répondu publiquement sous le post avec ces deux précisions et le rapp
 | Benchmarks | Aucun commit après `3800a04` : registre `aae3761f` (« total 15 hours ») et bandeau du README sans ligne de portée inchangés | `git log` |
 | Produit | Trois commits après `f74605e` (`9ff64ec`, `11def71`, `53701ab`) : version 1.7.0 et paquets npm, sans rapport avec le benchmark, le 77,1 % ou l'audit. « Never used to tune the engine » reste en place, avec la réserve du 2 octobre | `git diff f74605e 53701ab` |
 | Identité des commits de cette branche | Les commits précédents portaient l'adresse `kab@users.noreply.github.com`, que GitHub rattache à un compte tiers sans lien avec cet audit. Ils sont réattribués à `KAB`, compte Krigsexe. Arbres, dates et messages inchangés | `git log --format='%T %at %ct %s'` identique avant et après |
+
+## 2026-10-04 : derniers restes traités, PR n° 47 fermée par Tony
+
+| Point | État | Preuve |
+|---|---|---|
+| Registre `aae3761f` « total 15 hours » | Corrigé : réponse citée telle que journalisée, coupée avant tout total ; `discard_reason`, `SUMMARY.md`, `METHODOLOGY.md` et `index.html` ne disent plus que le run 1 a répondu « 15 hours ». La réplique de `3a704032`, abrégée elle aussi, est désormais citée telle quelle. Les deux citations sont identiques à l'octet aux journaux | benchmarks `22204aa` ; `spine-dream-multirun.log` L1267, `exp-verify.log` L193 |
+| Ligne de portée dans le bandeau du README de benchmarks | Ajoutée : « This audit covered the published files, ledgers and arithmetic. It does not evaluate the product or the closed engine. » Le bandeau renvoie à la PR n° 47 | benchmarks `22204aa`, `aa6dd0f` |
+| README produit | Lien vers la PR n° 47 avec la même portée : « did not evaluate the product or the closed engine » | produit `e041422` |
+| `verify.js` | Rejoué hors réseau sur `aa6dd0f` : rc = 0, registres cohérents, aucun score modifié | exécution locale |
+| « never used to tune the engine » | Inchangé. Tony le considère comme réglé ; la réserve du 2 octobre tient (PROTOCOL §11 : choix de la requête de récupération mesuré sur les 96 questions). Formulation exacte disponible dans le même README : « never been answered » | `PROTOCOL.md` L216-L223 |
+| PR n° 47 | Fermée sans fusion par Tony le 2026-10-04, avec un récapitulatif des trois restes | page de la PR |
